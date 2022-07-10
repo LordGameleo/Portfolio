@@ -1,0 +1,46 @@
+.nav-bar-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    background: #424874;
+    display: flex;
+    flex-wrap: wrap;
+    height: 60px;
+
+    .heading{
+        height: 60px;
+        flex: 1 1 auto;
+        img{
+            cursor: not-allowed;
+            height: 60px;
+        }
+    }
+
+    .links{
+        height: 60px;
+        display: flex;
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+        font-size: 18px;
+        justify-content: center;
+        .link {
+            flex: 1 1 auto;
+            text-align: center;
+            align-self: center;
+            color: #F4EEFF;
+            cursor: pointer;
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+        }    
+        .link:hover:not(.active){
+            color: white;
+            text-decoration: underline;
+        }
+        .active{
+            color: #A6B1E1;
+            text-decoration: underline;
+        }
+    }
+}

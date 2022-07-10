@@ -1,0 +1,21 @@
+<div class="intro-container">
+    <ngt-canvas style="border-radius: 10%;" (created)="canvasCreated($event)" (mousemove)="onMouseMove($event)">
+        <!-- <ngt-stats></ngt-stats> -->
+        <ngt-ambient-light [intensity]="0.1"></ngt-ambient-light>
+        <ngt-spot-light (ready)="setLightOnRobot($event)" [position]="[0,2,4]" [args]="['white',1,8,math.PI/4,0.25,0]">
+        </ngt-spot-light>
+        <ng-container *ngIf="modelHouse$ | async as modelHouse">
+            <ngt-primitive (ready)="setHouse($event)" [object]="modelHouse.scene"></ngt-primitive>
+            <ng-container *ngIf="modelRobot$ | async as modelRobot">
+                <ngt-primitive (click)="animateRandomAction()" (animateReady)="animateRobot()"
+                    (ready)="setRobot(modelRobot)" [object]="modelRobot.scene">
+                </ngt-primitive>
+                <ng-container *ngIf="modelBoard$ | async as modelBoard">
+                    <ngt-primitive (ready)="setBoard(modelBoard)" [object]="modelBoard.scene">
+                        <ngt-soba-orbit-controls (ready)="setOrbitControl($event)"></ngt-soba-orbit-controls>
+                    </ngt-primitive>
+                </ng-container>    
+            </ng-container>
+        </ng-container>
+    </ngt-canvas>
+</div>

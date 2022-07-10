@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* You can add global styles to this file, and also import other style files */
+
+$gradient-track: linear-gradient(0deg, rgb(80, 80, 80), rgb(134, 134, 134), rgb(135, 135, 135), rgb(99, 99, 99), rgb(59, 59, 59));
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    align-content: stretch;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    overscroll-behavior: none;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+}
+
