@@ -3,11 +3,12 @@
         <app-nav-bar></app-nav-bar>
     </div>
     <div class="page-container">
-        <router-outlet></router-outlet>
-        <!-- <app-home id='home'></app-home>
-        <app-about id='about'></app-about>
-        <app-skill-and-tools></app-skill-and-tools>
-        <app-work id='work'></app-work>
-        <app-contact id='contact'></app-contact> -->
+        <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+            <app-home class="section" ></app-home>
+            <app-about class="section" ></app-about>
+            <app-skill-and-tools class="section" ></app-skill-and-tools>
+            <app-work class="section"  ></app-work>
+            <app-contact class="section"  ></app-contact>
+        </div>
     </div>
 </div>

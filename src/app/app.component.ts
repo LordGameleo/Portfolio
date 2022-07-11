@@ -1,8 +1,8 @@
-import { animate, style, transition, trigger } from '@angular/animations';
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { debounce } from '../utils/debounce';
+import { fullpage_api, options } from '../utils/fullpage';
 
 const componentsSequence = ['home', 'about', 'skills', 'work', 'contact'];
 
@@ -11,20 +11,6 @@ const componentsSequence = ['home', 'about', 'skills', 'work', 'contact'];
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    animations: [       // metadata array
-        // trigger('visibility',
-        //     [
-        //         transition(':enter', [
-        //             style({ transform: 'translateX(100%)', opacity: 0 }),
-        //             animate('500ms', style({ transform: 'translateX(100%)', opacity: 1 }))
-        //         ]),
-        //         transition(':leave', [
-        //             style({ transform: 'translateX(0)', opacity: 1 }),
-        //             animate('500ms', style({ transform: 'translateX(100%)', opacity: 1 }))
-        //         ])
-        //     ]
-        // )
-    ],
 })
 export class AppComponent {
     title = 'PortFolio';
@@ -32,27 +18,29 @@ export class AppComponent {
     currentStep: BehaviorSubject<number> = new BehaviorSubject(0);
     scrollingElement!: Element;
     elementPositionArray: number[] = [0, 704, 1408, 2112, 2816];
+    config!: options;
+    fullpage_api!: fullpage_api;
 
     constructor(private route: ActivatedRoute) {
         this.scrollingElement = document.scrollingElement as Element;
+        this.config = {
+
+            // fullpage options
+            licenseKey: 'gplv3-license',
+            anchors: ['home', 'about', 'skills', 'work', 'contact'],
+            dragAndMove: true,
+
+            // fullpage callbacks
+            afterResize: () => {
+                console.log("After resize");
+            },
+            afterLoad: (origin: any, destination: any, direction: any) => {
+                console.log(origin.index);
+            }
+        };
     }
 
     ngOnInit() {
-        this.route.fragment.subscribe(
-            {
-                next: (fragment: string | null) => {
-                    console.log(fragment);
-                    switch (fragment) {
-                        case componentsSequence[0]: this.toggleToStep(0); break;
-                        case componentsSequence[1]: this.toggleToStep(1); break;
-                        case componentsSequence[2]: this.toggleToStep(2); break;
-                        case componentsSequence[3]: this.toggleToStep(3); break;
-                        case componentsSequence[4]: this.toggleToStep(4); break;
-                    }
-                    console.log(this.currentStep);
-                }
-            }
-        )
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -98,20 +86,24 @@ export class AppComponent {
     }
 
 
+    getRef(fullPageRef:any) {
+        this.fullpage_api = fullPageRef;
+    }
+
 
     toggleNext() {
         if (this.currentStep.value < this.elementPositionArray.length - 1) {
-            this.currentStep.next(this.currentStep.value+1);
+            this.currentStep.next(this.currentStep.value + 1);
         }
     }
 
     togglePrevious() {
         if (this.currentStep.value) {
-            this.currentStep.next(this.currentStep.value-1);
+            this.currentStep.next(this.currentStep.value - 1);
         }
     }
 
-    toggleToStep(step:number) {
+    toggleToStep(step: number) {
         this.currentStep.next(step);
     }
 }

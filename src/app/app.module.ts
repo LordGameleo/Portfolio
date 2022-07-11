@@ -21,6 +21,7 @@ import { HomeComponent } from './components/home/home.component';
 import { WorkComponent } from './components/work/work.component';
 import { SkillAndToolsComponent } from './components/skill-and-tools/skill-and-tools.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SkillAndToolsComponent,
   ],
   imports: [
+    AngularFullpageModule,
     BrowserAnimationsModule,
     NgtStatsModule,
     NgtTorusKnotGeometryModule,
