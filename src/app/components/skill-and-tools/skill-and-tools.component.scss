@@ -1,16 +1,21 @@
+:host {
+    min-height: 100vh;
+    height: 100vh;
+}
+
 .skill-and-tools-container {
+    height: 100vh;
     padding: 0 5%;
-    height: calc(100vh);
-    background: #DCD6F7;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     row-gap: 10%;
+    justify-content: center;
 
     .content-container {
+        margin: 30px 0;
         display: flex;
         flex-direction: column;
-        margin-top: 3%;
         width: fit-content;
 
         .heading {
@@ -26,18 +31,241 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
-        .skill {
-            flex: 0 0 auto;
-            text-align: center;
+
+        .sub-container {
             display: flex;
-            flex-direction: column;
-            .caption{
-                line-height: 60px;
-                font-size: 20px;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            flex: 1 0 30%;
+
+            .skill {
+                flex: 0 0 auto;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .caption {
+                    line-height: 60px;
+                    font-size: 20px;
+                }
+
+                img {
+                    width: 100px;
+                }
             }
-            img{
-                height: 100px;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width:850px) and (min-width:600px) {
+
+    .skill-and-tools-container {
+        row-gap: 20px;
+
+        .content-container {
+            width: 90%;
+
+            .heading {
+                font-size: 30px;
+            }
+
+            .para {
+                font-size: 18px;
+            }
+        }
+
+        .skills-container {
+            row-gap: 20px;
+            column-gap: 15px;
+            align-self: flex-end;
+
+            .sub-container {
+                column-gap: 30px;
+                min-width: 200px;
+                max-width: 400px;
+
+                .skill {
+                    .caption {
+                        line-height: 24px;
+                        font-size: 16px;
+                    }
+
+                    img {
+                        width: 70px;
+                    }
+
+                }
+
+                .skill:last-child {
+                    img {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:600px) and (min-width:40px) {
+    .skill-and-tools-container {
+        row-gap: 10px;
+
+        .content-container {
+            width: 90%;
+
+            .heading {
+                font-size: 30px;
+            }
+
+            .para {
+                font-size: 18px;
+            }
+        }
+
+        .skills-container {
+            row-gap: 10px;
+            column-gap: 10px;
+            display: flex;
+
+            .sub-container {
+                column-gap: 10px;
+                min-width: 170px;
+                max-width: 450px;
+
+                .skill {
+                    position: relative;
+
+                    .caption {
+                        line-height: 24px;
+                        font-size: 20px;
+                        font-weight: 700;
+                        display: none;
+                    }
+
+                    .display {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        text-align: center;
+                        z-index: 2;
+                        margin: auto;
+                        width: 100%;
+                    }
+
+                    .white {
+                        color: white;
+                    }
+
+                    img {
+                        width: 75px;
+                    }
+
+                    .blur {
+                        filter: blur(14px);
+                        -webkit-filter: blur(14px);
+                    }
+
+                }
+
+                .skill:hover {
+                    .caption {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        text-align: center;
+                        z-index: 2;
+                    }
+
+                    img {
+                        filter: blur(14px);
+                        -webkit-filter: blur(14px);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .skill-and-tools-container {
+        // justify-content: flex-end;
+        
+        .content-container {
+            width: 90%;
+            margin-bottom: 15px;
+            margin-top: 135px;
+
+            .heading {
+                font-size: 28px;
+            }
+
+            .para {
+                font-size: 18px;
+            }
+        }
+        .skills-container {
+            row-gap: 10px;
+            column-gap: 10px;
+            display: flex;
+
+            .sub-container {
+                column-gap: 10px;
+                min-width: 200px;
+                max-width: 450px;
+
+                .skill {
+                    position: relative;
+
+                    .caption {
+                        line-height: 24px;
+                        font-size: 20px;
+                        font-weight: 700;
+                        display: none;
+                    }
+
+                    .display {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        text-align: center;
+                        z-index: 2;
+                        margin: auto;
+                        width: 100%;
+                    }
+
+                    .white {
+                        color: white;
+                    }
+
+                    img {
+                        width: 55px;
+                    }
+                    .blur {
+                        filter: blur(14px);
+                        -webkit-filter: blur(14px);
+                    }
+
+                }
+                .skill:hover {
+                    .caption {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        text-align: center;
+                        z-index: 2;
+                    }
+
+                    img {
+                        filter: blur(14px);
+                        -webkit-filter: blur(14px);
+                    }
+                }
+
             }
         }
     }

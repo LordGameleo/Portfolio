@@ -5,11 +5,11 @@
 $gradient-track: linear-gradient(0deg, rgb(80, 80, 80), rgb(134, 134, 134), rgb(135, 135, 135), rgb(99, 99, 99), rgb(59, 59, 59));
 
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     display: flex;
     align-content: stretch;
     width: 100vw;
@@ -20,3 +20,7 @@ body{
     font-style: normal;
 }
 
+
+.fp-tableCell {
+    vertical-align: unset !important;
+}

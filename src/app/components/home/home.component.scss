@@ -1,12 +1,16 @@
+:host {
+    height: 100vh;
+}
+
 .home-container {
     width: 100vw;
-    height: calc(100vh);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: white;
 
     .content-container {
+        height: calc(100vh - 60px);
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
@@ -15,8 +19,11 @@
 
         .content-row {
             text-align: center;
+
             .profile-image {
                 border-radius: 50%;
+                height: 300px;
+                flex: 0 0;
             }
 
             .line-1 {
@@ -52,6 +59,140 @@
                 font-size: 20px;
                 line-height: 30px;
                 color: #424874;
+            }
+        }
+        .content-row:first{
+            width: fit-content;
+        }
+}
+
+    @media only screen and (max-height:730px) and (min-width:600px) {
+        .content-container {
+            flex-direction: row;
+            column-gap: 30px;
+            .content-row {
+                width: 100%;
+                .profile-image {
+                    padding-left: 5px;
+                }
+
+                .line-1 {
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 38px;
+                }
+
+                .line-2 {
+                    font-weight: 700;
+                    font-size: 38px;
+                    line-height: 55px;
+                }
+
+                .line-3 {
+                    font-weight: 600;
+                    font-size: 38px;
+                    line-height: 55px;
+                }
+
+                .line-4 {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 38px;
+                }
+
+                .line-5 {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 20px;
+                }            
+            }
+        }
+    }
+
+    @media only screen and (max-width:850px) and (min-width: 600px) {
+        .content-container {
+
+            .content-row {
+                padding: 0 1%;
+                .profile-image {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                .line-1 {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 48px;
+                }
+
+                .line-2 {
+                    font-weight: 700;
+                    font-size: 38px;
+                    line-height: 60px;
+                }
+
+                .line-3 {
+                    font-weight: 600;
+                    font-size: 38px;
+                    line-height: 70px;
+                }
+
+                .line-4 {
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 38px;
+                }
+
+                .line-5 {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width:600px) {
+        .content-container {
+            margin-top: 120px;
+            .content-row {
+                padding: 0 1%;
+                .profile-image {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                .line-1 {
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+
+                .line-2 {
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 40px;
+                }
+
+                .line-3 {
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 50px;
+                }
+
+                .line-4 {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 30px;
+                    max-width:200px;
+                    margin: auto;
+                }
+
+                .line-5 {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 30px;
+                }
             }
         }
     }

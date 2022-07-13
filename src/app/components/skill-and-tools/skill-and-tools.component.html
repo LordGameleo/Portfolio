@@ -9,79 +9,89 @@
         </div>
     </div>
     <div class="skills-container">
-        <div class="skill">
-            <div class="caption">
-                Angular
+        <div class="sub-container">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==0?'display':''">
+                    Angular
+                </div>
+                <img src="../../../assets//images/angular.png" [ngClass]="(counter | async)==0?'blur':''">
             </div>
-            <img src="../../../assets//images/angular.png">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==1?'display':''">
+                    HTML
+                </div>
+                <img src="../../../assets//images/html.png" [ngClass]="(counter | async)==1?'blur':''">
+            </div>                
         </div>
-        <div class="skill">
-            <div class="caption">
-                HTML
+        <div class="sub-container">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==2?'display':''">
+                    CSS
+                </div>
+                <img src="../../../assets//images/css.png" [ngClass]="(counter | async)==2?'blur':''">
             </div>
-            <img src="../../../assets//images/html.png">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==3?'display':''">
+                    TypeScript
+                </div>
+                <img src="../../../assets//images/ts.png" [ngClass]="(counter | async)==3?'blur':''">
+            </div>    
         </div>
-        <div class="skill">
-            <div class="caption">
-                CSS
+        <div class="sub-container">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==4?'display':''">
+                    Material
+                </div>
+                <img src="../../../assets//images/angular-material.png" [ngClass]="(counter | async)==4?'blur':''">
             </div>
-            <img src="../../../assets//images/css.png">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==5?'display':''">
+                    Three.js
+                </div>
+                <img src="../../../assets//images/three.png" [ngClass]="(counter | async)==5?'blur':''">
+            </div>                
         </div>
-        <div class="skill">
-            <div class="caption">
-                TypeScript
+        <div class="sub-container">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==6?'display white':''">
+                    Git
+                </div>
+                <img src="../../../assets//images/git.png" [ngClass]="(counter | async)==6?'blur':''">
             </div>
-            <img src="../../../assets//images/ts.png">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==7?'display':''">
+                    Express.js
+                </div>
+                <img src="../../../assets//images/expressjs.png" [ngClass]="(counter | async)==7?'blur':''">
+            </div>
         </div>
-        <div class="skill">
-            <div class="caption">
-                Material
+        <div class="sub-container">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==8?'display':''">
+                    Spring Boot
+                </div>
+                <img src="../../../assets//images/spring.png" [ngClass]="(counter | async)==8?'blur':''">
             </div>
-            <img src="../../../assets//images/angular-material.png">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==9?'display':''">
+                    SQL
+                </div>
+                <img src="../../../assets//images/sql.png" [ngClass]="(counter | async)==9?'blur':''">
+            </div>
         </div>
-        <div class="skill">
-            <div class="caption">
-                Three.js
+        <div class="sub-container">
+            <div class="skill">
+                <div class="caption" [ngClass]="(counter | async)==10?'display':''">
+                    Docker
+                </div>
+                <img src="../../../assets//images/docker.webp" [ngClass]="(counter | async)==10?'blur':''">
             </div>
-            <img src="../../../assets//images/three.png">
-        </div>
-    </div>
-    <div class="skills-container">
-        <div class="skill">
-            <div class="caption">
-                Git
+            <div class="skill">
+                 <div class="caption" [ngClass]="(counter | async)==11?'display':''">
+                     Nginx
+                </div>
+                <img src="../../../assets//images/nginx.png" [ngClass]="(counter | async)==11?'blur':''">
             </div>
-            <img src="../../../assets//images/git.png">
-        </div>
-        <div class="skill">
-            <div class="caption">
-                Express.js
-            </div>
-            <img src="../../../assets//images/expressjs.png">
-        </div>
-        <div class="skill">
-            <div class="caption">
-                Spring Boot
-            </div>
-            <img src="../../../assets//images/spring.png">
-        </div>
-        <div class="skill">
-            <div class="caption">
-                SQL
-            </div>
-            <img src="../../../assets//images/sql.png">
-        </div>
-        <div class="skill">
-            <div class="caption">
-                Docker
-            </div>
-            <img src="../../../assets//images/docker.webp">
-        </div>
-        <div class="skill">
-             <div class="caption">
-                 Nginx
-            </div>
-            <img src="../../../assets//images/nginx.png">
         </div>
     </div>
 </div>

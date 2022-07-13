@@ -12,8 +12,56 @@
         width: 100%;
     }
     .nav-bar{
-        position: sticky;
+        position: fixed;
         top: 0;
         z-index: 2;
     }
 }
+.overlay{
+    display: none;
+    @media screen and (orientation:landscape) and (max-height:600px){
+        display: block;
+        z-index: 999;
+        background: #F4EEFF;
+        position: fixed; /* Sit on top of the page content */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer; /* Add a pointer on hover */    
+    }
+}
+// white -> #F4EEFF ->  #DCD6F7 ->  #A6B1E1 ->  #424874
+
+#section0{
+    background: -webkit-gradient(linear, top left, bottom left, from(white), to(#F4EEFF));
+    background: -webkit-linear-gradient(white, #F4EEFF);
+    background: linear-gradient(white,#F4EEFF);
+}
+
+#section1{
+    background: -webkit-gradient(linear, top left, bottom left, from(#F4EEFF), to(#DCD6F7));
+    background: -webkit-linear-gradient(#F4EEFF, #DCD6F7);
+    background: linear-gradient(#F4EEFF,#DCD6F7);
+}
+
+#section2{
+    background: -webkit-gradient(linear, top left, bottom left, from(#DCD6F7), to(#A6B1E1));
+    background: -webkit-linear-gradient(#DCD6F7, #A6B1E1);
+    background: linear-gradient(#DCD6F7,#A6B1E1);
+}
+
+#section3{
+    background: -webkit-gradient(linear, top left, bottom left, from(#A6B1E1), to(#424874));
+    background: -webkit-linear-gradient(#A6B1E1, #424874);
+    background: linear-gradient(#A6B1E1,#424874);
+}
+
+#section4{
+    background: -webkit-gradient(linear, top left, bottom left, from(#424874), to(#242b64));
+    background: -webkit-linear-gradient(#424874, #242b64);
+    background: linear-gradient(#424874,#242b64);
+}
+

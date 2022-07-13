@@ -1,14 +1,17 @@
-<div class="app">
+<div class="overlay">
+    Please switch to potrait mode.
+</div>
+<div class="app" >
     <div class="nav-bar">
         <app-nav-bar></app-nav-bar>
     </div>
-    <div class="page-container">
-        <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
-            <app-home class="section" ></app-home>
-            <app-about class="section" ></app-about>
-            <app-skill-and-tools class="section" ></app-skill-and-tools>
-            <app-work class="section"  ></app-work>
-            <app-contact class="section"  ></app-contact>
+    <div class="page-container"  fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+        <div>
+            <app-home class="section" id="section0"></app-home>
+            <app-about class="section" id="section1"></app-about>
+            <app-skill-and-tools class="section" id="section2"></app-skill-and-tools>
+            <app-work class="section"  id="section3"></app-work>
+            <app-contact class="section"  id="section4"></app-contact>
         </div>
     </div>
 </div>
