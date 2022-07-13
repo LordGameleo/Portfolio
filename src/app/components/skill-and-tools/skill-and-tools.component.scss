@@ -110,7 +110,7 @@
     }
 }
 
-@media only screen and (max-width:600px) and (min-width:40px) {
+@media only screen and (max-width:600px) and (min-width:400px) {
     .skill-and-tools-container {
         row-gap: 10px;
 
@@ -193,19 +193,19 @@
 
 @media screen and (max-width:400px) {
     .skill-and-tools-container {
-        // justify-content: flex-end;
-        
+        justify-content: center;
+        row-gap: 30px;
         .content-container {
             width: 90%;
-            margin-bottom: 15px;
-            margin-top: 135px;
+            margin-top: 120px;
+            margin-bottom: 0px;
 
             .heading {
-                font-size: 28px;
+                font-size: 24px;
             }
 
             .para {
-                font-size: 18px;
+                font-size: 16px;
             }
         }
         .skills-container {

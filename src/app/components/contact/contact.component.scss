@@ -118,7 +118,7 @@
         }
     }
 
-    @media only screen and (max-width:600px) {
+    @media only screen and (max-width:600px) and (min-width:400px) {
         .content-container {
             margin-top: 120px;
             row-gap: 4vh;
@@ -136,6 +136,52 @@
                     width: 150px;
                     height: 40px;
                     font-size: 20px;
+                }
+            }
+
+            .social-bar {
+                row-gap: 10px;
+
+                .seperator {
+                    width: 80%;
+                    height: 4px;
+                }
+
+                .social-icons-container {
+                    column-gap: 10%;
+
+                    .social-icon {
+                        width: 30px;
+                        height: 30px;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width:400px) {
+        .content-container {
+            margin-top: 120px;
+            row-gap: 4vh;
+            .heading {
+                font-size: 24px;
+            }
+
+            .para {
+                font-size: 16px;
+            }
+
+            .button {
+
+                button {
+                    width: 150px;
+                    height: 40px;
+                    font-size: 18px;
                 }
             }
 
