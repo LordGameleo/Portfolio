@@ -11,7 +11,6 @@
     overflow: hidden;
     row-gap: 10%;
     justify-content: center;
-
     .content-container {
         margin: 30px 0;
         display: flex;
@@ -115,6 +114,7 @@
         row-gap: 10px;
 
         .content-container {
+            margin-top: 120px;
             width: 90%;
 
             .heading {
@@ -197,7 +197,6 @@
         row-gap: 30px;
         .content-container {
             width: 90%;
-            margin-top: 120px;
             margin-bottom: 0px;
 
             .heading {
@@ -215,16 +214,16 @@
 
             .sub-container {
                 column-gap: 10px;
-                min-width: 200px;
-                max-width: 450px;
+                min-width: 120px;
+                max-width: 300px;
 
                 .skill {
                     position: relative;
 
                     .caption {
                         line-height: 24px;
-                        font-size: 20px;
-                        font-weight: 700;
+                        font-size: 14px;
+                        font-weight: 400;
                         display: none;
                     }
 
