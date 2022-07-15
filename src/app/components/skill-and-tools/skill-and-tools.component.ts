@@ -17,7 +17,6 @@ export class SkillAndToolsComponent implements OnInit {
             next: (fragment) => {
                 if (fragment == 'skills') {
                     this.interval = setInterval(() => {
-                        console.log('interval')
                         this.counter.next(this.counter.value + 1);
                         this.counter.next(this.counter.value % 12);
                     }, 1000);

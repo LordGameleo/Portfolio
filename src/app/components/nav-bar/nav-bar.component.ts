@@ -9,7 +9,7 @@ import { Page } from 'src/app/enums/Page.enum';
     templateUrl: './nav-bar.component.html',
     styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent implements OnInit, OnChanges {
+export class NavBarComponent implements OnInit {
 
     currentPage!: BehaviorSubject<Page>;
     pageEnum = Page;
@@ -29,9 +29,7 @@ export class NavBarComponent implements OnInit, OnChanges {
             }
         })
     }
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes['currentPage'].previousValue,changes['currentPage'].currentValue);
-    }
+
 
     ngOnInit(): void {
     }
