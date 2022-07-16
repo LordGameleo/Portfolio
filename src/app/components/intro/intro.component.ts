@@ -1,7 +1,7 @@
 import { NgtCamera, NgtCreatedState, NgtLoader, NgtSize } from '@angular-three/core';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AnimationClip, AnimationMixer, Box3, Clock, Color, DoubleSide, FogExp2, Group, LoopOnce, LoopRepeat, Material, Mesh, Scene, SpotLight, Texture, Vector2, Vector3 } from 'three';
+import { AnimationClip, AnimationMixer, Box3, Clock, Color, DoubleSide, FogExp2, Group, LoopOnce, LoopRepeat, Material, Mesh, PerspectiveCamera, Scene, SpotLight, Texture, Vector2, Vector3 } from 'three';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three-stdlib';
 import { Easing, Tween } from '@tweenjs/tween.js'
@@ -58,7 +58,8 @@ export class IntroComponent implements OnInit {
 
   setDefaultCamera() {
     console.log("Default")
-    this.camera.position.set(0, 1, 3.3);
+    this.camera.position.set(0, 1, 4);
+    (this.camera as PerspectiveCamera).fov = 50;
   }
 
   setSceneBackground() {

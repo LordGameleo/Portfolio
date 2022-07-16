@@ -1,3 +1,56 @@
 <div class="work-container">
-    
+    <div class='component-container'>
+        <div class="indicator left" (click)="togglePrev()">
+            <div class="prev">
+            </div>
+        </div>
+        <div class="indicator right" (click)="toggleNext()">
+            <div class="next">
+            </div>
+        </div>
+        <div class="wheel" [@spin]="this.counter">
+
+        </div>
+        <div class='container' [@spin]="this.counter" (@spin.done)="setContent()">
+            <div class='content'>
+                <div class="content-card">
+                    <div class="heading">
+                        {{ data?.heading }}
+                    </div>
+                    <div class="type">
+                        {{ data?.type }}
+                    </div>
+                    <div class="organization" *ngIf="data.isData">
+                        <div class="org">
+                            {{ data?.org }}
+                        </div>
+                        <div class="time">
+                            {{ data?.startTime }} to {{ data?.endTime }}
+                        </div>
+                    </div>
+                    <div class="brief">
+                        {{ data?.brief }}
+                    </div>
+                    <div class="extra-data" [hidden]="data.isData">
+                        <app-intro></app-intro>
+                    </div>
+                </div>
+            </div>
+            <div class='content blur'>
+                <div class="content-card">
+
+                </div>
+            </div>
+            <div class='content blur'>
+                <div class="content-card">
+
+                </div>
+            </div>
+            <div class='content blur'>
+                <div class="content-card">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
