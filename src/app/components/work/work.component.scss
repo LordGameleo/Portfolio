@@ -120,22 +120,30 @@ $totalElements: 4;
             border-radius: 50%;
             position: relative;
 
+            .z-1{
+                z-index: 1;
+            }
+            .z-2{
+                z-index: 2;
+            }
+
 
             .content {
                 position: absolute;
                 width: $contentWidth;
                 height: $contentHeight;
 
+
                 .content-card {
-                    border-radius: 20px;
+                    border-top: 10px solid #424874;
                     background: white;
-                    height: 75%;
-                    width: 80%;
+                    height: 500px;
+                    width: min(70vw, 550px);
                     margin: auto;
                     text-align: center;
 
                     .heading{
-                        font-size: 30px;
+                        font-size: 28px;
                         text-align: center;
                         padding: 5%;
                         padding-bottom: 0;
@@ -160,8 +168,9 @@ $totalElements: 4;
                     .brief{
                         flex: 1 1 auto;
                         background: #F4EEFF;
-                        width: 80%;
-                        height: 200px;
+                        padding: 2%;
+                        width: 85%;
+                        height: 250px;
                         margin: auto;
                     }
                     
@@ -183,9 +192,12 @@ $totalElements: 4;
                 }
             }
 
-            .blur {
-                opacity: 0.5;
+            .content.blur {
+                .content-card{
+                    opacity: 0.5;
+                }
             }
+
 
             .yellow {
                 background: yellow;
@@ -207,15 +219,6 @@ $totalElements: 4;
     }
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 @keyframes press {
     0% {
       transform: scale(1);

@@ -8,6 +8,7 @@ export interface WorkData {
     brief: string,
     descrition?: string,
     logoURL?: string,
+    tools?: string,
 }
 
 
@@ -23,26 +24,30 @@ export const WORK_DATA: WorkData[] = [
     //     logoURL: '',
     // },
     {
-        heading: 'Teknofeet.com',
-        org: 'Teknofeet',
-        type: 'Work',
-        isData: true,
-        startTime: 'Nov 2021',
-        endTime: 'Present',
-        brief: '',
-        descrition: '',
-        logoURL: '',
-    },
-    {
         heading: 'Teknofeet Marketplace System',
         org: 'Teknofeet',
         type: 'Work',
         isData: true,
         startTime: 'Nov 2021',
         endTime: 'Present',
-        brief: '',
+        brief: `Teknofeet envissioned itself as a marketplace, enabling brands to leverage their technology to reach to customer base and minimize the returns through online sale.
+        <br>I designed the architecture, lead the software team which developed the system enabling the brands to seamlessly integrate with us directly or through Aggregators such as OMS Guru, Uniware, BrownTape, etc`,
+        descrition: '',
+        tools: 'Angular, NodeJS, Jest, Three.js, Nginx, ExpressJS, MySQL, Docker',
+    },
+    {
+        heading: 'Teknofeet.com',
+        org: 'Teknofeet',
+        type: 'Work',
+        isData: true,
+        startTime: 'Nov 2021',
+        endTime: 'Present',
+        brief: `Teknofeet is first Indian Footcommerce company to talk about fit according to volumental analysis of foot. 
+        Teknofeet uses CV and ML to accurately generate a 3-D feet model and then recommends shoe after matching feet dimensions with footwear inner dimensions.
+        <br><br>As the core member of Software Team at Teknofeet, I laid the foundation of <a href='https://teknofeet.com/'>www.teknofeet.com</a> `,
         descrition: '',
         logoURL: '',
+        tools: 'Angular, NodeJS, Three.js, Nginx, ExpressJS, MySQL, Docker',
     },
     {
         heading: 'Warehouse Management System',
@@ -54,6 +59,7 @@ export const WORK_DATA: WorkData[] = [
         brief: '',
         descrition: '',
         logoURL: '',
+        tools: 'Angular, Spring, Kafka, SQL, Docker',
     },
     {
         heading: 'SSO',
@@ -65,5 +71,6 @@ export const WORK_DATA: WorkData[] = [
         brief: '',
         descrition: '',
         logoURL: '',
+        tools: 'Angular, Spring, Kafka, SQL, Docker',
     },
 ]

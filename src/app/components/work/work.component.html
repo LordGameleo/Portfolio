@@ -12,7 +12,7 @@
 
         </div>
         <div class='container' [@spin]="this.counter" (@spin.done)="setContent()">
-            <div class='content'>
+            <div class='content z-2'>
                 <div class="content-card">
                     <div class="heading">
                         {{ data?.heading }}
@@ -29,24 +29,25 @@
                         </div>
                     </div>
                     <div class="brief">
-                        {{ data?.brief }}
+                        <p [innerHtml]="data?.brief">
+                        </p>
                     </div>
                     <div class="extra-data" [hidden]="data.isData">
                         <app-intro></app-intro>
                     </div>
                 </div>
             </div>
-            <div class='content blur'>
+            <div class='content blur z-1'>
                 <div class="content-card">
 
                 </div>
             </div>
-            <div class='content blur'>
+            <div class='content blur z-1'>
                 <div class="content-card">
 
                 </div>
             </div>
-            <div class='content blur'>
+            <div class='content blur z-1'>
                 <div class="content-card">
 
                 </div>
