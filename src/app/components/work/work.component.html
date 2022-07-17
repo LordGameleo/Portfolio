@@ -28,9 +28,9 @@
                             {{ data?.startTime }} to {{ data?.endTime }}
                         </div>
                     </div>
-                    <div class="brief">
-                        <p [innerHtml]="data?.brief">
-                        </p>
+                    <div class="brief" *ngIf="data.isData">
+                        <div [innerHtml]="data?.brief">
+                        </div>
                     </div>
                     <div class="extra-data" [hidden]="data.isData">
                         <app-intro></app-intro>

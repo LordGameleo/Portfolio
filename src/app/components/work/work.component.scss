@@ -28,7 +28,7 @@ $totalElements: 4;
             padding: 20px;
             top: calc(50% - 15px);
             background: #F4EEFF;
-            box-shadow: 5px 5px 15px;
+            z-index: 3;
 
             .next {
                 border-width: 4px 4px 0 0;
@@ -50,16 +50,19 @@ $totalElements: 4;
             box-shadow: 2px 2px 10px;
             cursor: pointer;
         }
+
         .indicator:active {
             animation: press 0.2s 1 linear;
-          }
-          
+        }
+
         .left {
             left: 50px;
+            box-shadow: 5px 5px 15px;
         }
 
         .right {
             right: 50px;
+            box-shadow: -5px 5px 15px;
         }
 
         .spin-animation {
@@ -83,32 +86,11 @@ $totalElements: 4;
             border-radius: 50%;
             width: $containerDiameter;
             height: $containerDiameter;
-            bottom: 0;
             bottom: calc(-1 * #{$containerDiameter} + 15vh);
             left: calc(50vw - (1 * #{$containerDiameter} / 2));
-            z-index: 1;
-            background: rgba(176, 113, 238, 0.499);
-        }
-
-
-        .wheel::before {
-            content: '';
-            display: inline-block;
-            width: calc(100% - 4px);
-            height: 0px;
-            border: 2px solid black;
-            position: absolute;
-            top: 50%;
-        }
-
-        .wheel::after {
-            content: '';
-            display: inline-block;
-            height: calc(100% - 4px);
-            width: 0px;
-            border: 2px solid black;
-            position: absolute;
-            left: 50%;
+            z-index: 3;
+            background: url('../../../assets/images/Gear.png');
+            background-size: 100% 100%;
         }
 
 
@@ -120,10 +102,11 @@ $totalElements: 4;
             border-radius: 50%;
             position: relative;
 
-            .z-1{
+            .z-1 {
                 z-index: 1;
             }
-            .z-2{
+
+            .z-2 {
                 z-index: 2;
             }
 
@@ -142,49 +125,63 @@ $totalElements: 4;
                     margin: auto;
                     text-align: center;
 
-                    .heading{
+                    .heading {
                         font-size: 28px;
                         text-align: center;
                         padding: 5%;
                         padding-bottom: 0;
                     }
 
-                    .organization{
+                    .organization {
                         display: flex;
                         flex-direction: row;
-                        padding: 1% 10%;
-                        .org{
-                            font-size: 24px;
+                        padding: 2% 8%;
+
+                        .org {
+                            font-size: 22px;
                             text-align: left;
                             flex: 1 1 auto;
                         }
 
-                        .time{
+                        .time {
+                            align-self: center;
                             color: #424874;
                             text-align: right;
                             flex: 1 1 auto;
                         }
                     }
-                    .brief{
+
+                    .brief {
                         flex: 1 1 auto;
                         background: #F4EEFF;
                         padding: 2%;
                         width: 85%;
                         height: 250px;
                         margin: auto;
-                    }
-                    
+                        display: flex;
+                        justify-content: center;
 
-                    .extra-data{
+                        div {
+                            height: fit-content;
+                            align-self: center;
+                        }
+
+                        span {
+                            font-weight: 900;
+                        }
+                    }
+
+
+                    .extra-data {
                         margin: auto;
                         width: 80%;
                         height: 75%;
                     }
 
-                    .type{
+                    .type {
                         text-align: center;
-                        font-size: 20px;
-                        padding: 1px 5%;
+                        font-size: 14px;
+                        padding: 1px 2%;
                         margin: 5px auto;
                         width: fit-content;
                         background: #ffd8d8;
@@ -193,7 +190,7 @@ $totalElements: 4;
             }
 
             .content.blur {
-                .content-card{
+                .content-card {
                     opacity: 0.5;
                 }
             }
@@ -219,14 +216,145 @@ $totalElements: 4;
     }
 }
 
+@media screen and (max-width:850px) and (min-width:600px) {
+    .work-container {
+
+        .component-container {
+
+
+            .left {
+                left: 0;
+            }
+
+            .right {
+                right: 0;
+            }
+
+            .container {
+
+                .content {
+                    .content-card {
+                        height: 550px;
+
+                        .heading {
+                            font-size: 24px;
+                        }
+
+                        .organization {
+                            .org {
+                                font-size: 18px;
+                            }
+
+                            .time {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .brief {
+                            height: 300px;
+                        }
+
+
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
+
+@media screen and (max-width:600px) {
+    .work-container {
+
+        .component-container {
+
+            .indicator {
+                border-radius: 0;
+                top: unset;
+            }
+
+
+            .left {
+                bottom: 20px;
+                left: 0;
+            }
+
+            .right {
+                bottom: 20px;
+                right: 0;
+            }
+
+
+            .wheel {
+                bottom: calc(-1 * #{$containerDiameter} + 5vh);
+            }
+
+            .container {
+                $contentWidth : 95vw;
+                @for $i from 1 through $totalElements {
+                    .content:nth-child(#{$i}) {
+                        -webkit-transform-origin: 50% 50%;
+                        -moz-transform-origin: 50% 50%;
+                        -o-transform-origin: 50% 50%;
+                        transform-origin: 50% 50%;
+                        transform: rotate(math.$pi * ($i - 1) * math.div(2, $totalElements) * 1rad);
+                        left: calc((-1 * math.div($contentWidth, 2)) + calc((1 + math.sin(math.$pi * ($i - 1) * math.div(2, $totalElements))) * math.div($containerDiameter, 2)));
+                        top: calc((-1 * math.div($contentHeight, 2)) + calc((1 - math.cos(math.$pi * ($i - 1) * math.div(2, $totalElements))) * math.div($containerDiameter, 2)));
+                    }
+                }
+    
+                .content {
+                    height: 550px;
+                    width: calc(100vw - 30px);
+                    .content-card {
+                        width: calc(100vw - 30px);
+                        .heading {
+                            font-size: 20px;
+                        }
+
+                        .organization {
+                            .org {
+                                font-size: 16px;
+                                white-space: nowrap;
+                                max-width: 50%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+
+                            .time {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .brief {
+                            font-size: 14px;
+                            height: 300px;
+                        }
+
+                    }
+                }
+                .content.blur{
+                    opacity: 0;
+                }
+            }
+
+        }
+    }
+
+}
+
 @keyframes press {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
+
     50% {
-      transform: scale(0.92);
+        transform: scale(0.92);
     }
+
     to {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
+}
