@@ -11,7 +11,7 @@
             to hear from you!
         </div>
         <div class="button">
-            <button>
+            <button (click)="routeTo('mailto:adhikarihrithik@gmail.com')">
                 Say Hello
             </button>
         </div>
@@ -19,16 +19,16 @@
             <div class="seperator">
             </div>
             <div class="social-icons-container">
-                <div class="social-icon" style="border-radius: 10px;">
+                <div class="social-icon" style="border-radius: 10px;"  (click)="routeTo('https://www.linkedin.com/in/hrithikad/')">
                     <img src="../../../assets/images/linkedIn.webp">
                 </div>
-                <div class="social-icon">
+                <div class="social-icon" (click)="routeTo('https://github.com/LordGameleo/')">
                     <img src="../../../assets/images/github.png">
                 </div>
-                <div class="social-icon">
+                <div class="social-icon" (click)="routeTo('https://www.facebook.com/adhikarihrithik/')">
                     <img src="../../../assets/images/facebook.png">
                 </div>
-                <div class="social-icon">
+                <div class="social-icon" (click)="routeTo('https://leetcode.com/adhikarihrithik/')">
                     <img src="../../../assets/images/leetCode.png">
                 </div>
             </div>
