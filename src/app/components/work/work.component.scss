@@ -277,48 +277,52 @@ $totalElements: 4;
 
 
             .left {
-                bottom: 20px;
+                bottom: 50px;
                 left: 0;
             }
 
             .right {
-                bottom: 20px;
+                bottom: 50px;
                 right: 0;
             }
 
 
             .wheel {
-                bottom: calc(-1 * #{$containerDiameter} + 5vh);
+                bottom: calc(-1 * #{$containerDiameter} + 10vh);
             }
 
             .container {
-                $contentWidth : 95vw;
-                @for $i from 1 through $totalElements {
-                    .content:nth-child(#{$i}) {
-                        -webkit-transform-origin: 50% 50%;
-                        -moz-transform-origin: 50% 50%;
-                        -o-transform-origin: 50% 50%;
-                        transform-origin: 50% 50%;
-                        transform: rotate(math.$pi * ($i - 1) * math.div(2, $totalElements) * 1rad);
-                        left: calc((-1 * math.div($contentWidth, 2)) + calc((1 + math.sin(math.$pi * ($i - 1) * math.div(2, $totalElements))) * math.div($containerDiameter, 2)));
-                        top: calc((-1 * math.div($contentHeight, 2)) + calc((1 - math.cos(math.$pi * ($i - 1) * math.div(2, $totalElements))) * math.div($containerDiameter, 2)));
-                    }
+                width: 95vw;
+
+                .content:nth-child(1) {
+                    -webkit-transform-origin: 50% 50%;
+                    -moz-transform-origin: 50% 50%;
+                    -o-transform-origin: 50% 50%;
+                    transform-origin: 50% 50%;
+                    left: calc(0);
+                    top: -210px;
                 }
-    
+
+
                 .content {
-                    height: 550px;
-                    width: calc(100vw - 30px);
+                    width: 95vw;
+
                     .content-card {
                         width: calc(100vw - 30px);
+                        height: 380px;
+
                         .heading {
                             font-size: 20px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
 
                         .organization {
                             .org {
                                 font-size: 16px;
-                                white-space: nowrap;
                                 max-width: 50%;
+                                white-space: nowrap;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                             }
@@ -330,12 +334,15 @@ $totalElements: 4;
 
                         .brief {
                             font-size: 14px;
-                            height: 300px;
+                            height: 230px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
 
                     }
                 }
-                .content.blur{
+
+                .content.blur {
                     opacity: 0;
                 }
             }

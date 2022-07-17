@@ -25,7 +25,7 @@ export class AppComponent {
             licenseKey: 'gplv3-license',
             anchors: ['home', 'about', 'skills', 'work', 'contact'],
 			lockAnchors: false,
-			scrollOverflow: true,
+			scrollOverflow: false,
 			slidesNavigation: false,
 			controlArrows: false,
 			slidesNavPosition: 'bottom',
